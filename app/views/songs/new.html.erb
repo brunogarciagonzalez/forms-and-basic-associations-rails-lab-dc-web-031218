@@ -4,8 +4,21 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br />
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %>
+  <br />
+  <select id="song_genre_id" name="song[song_genre_id]">
+    <% @genre.class.all.each do |genre| %>
+      <option value="<%= genre.id %>"> <%= genre.name %></option>
+    <% end %>
+  </select>
+  <br />
+  <%= f.label :song_note_1 %>
+  <%= f.text_field :notes_1 %>
+  <br />
+  <%= f.label :song_note_2 %>
+  <%= f.text_field :notes_2 %>
+  <br />
 
   <%= f.submit %>
 <% end %>
-
-
